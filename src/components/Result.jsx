@@ -31,7 +31,13 @@ const Result = ({currentWord}) => {
             ))
           }
           </ul>
-          {meaning?.synonyms!="" && <p className="mt-5 mt-10 text-gray-500">Synonyms <span className="text-[#9D4DDA] font-bold ml-10"> {meaning?.synonyms}</span></p>}
+          <div className="flex items-start gap-5 mt-10">
+          <p className="text-gray-500 ">Synonyms </p>
+          <p className="divide-x-2 divide-double divide-[#9D4DDA]">{meaning?.synonyms.map(synonym => (
+            <span key={synonym} className="text-[#9D4DDA] font-bold px-2"> {synonym}</span>
+          ))}</p> 
+          </div>
+          
           
         </div>
       ))}
